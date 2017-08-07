@@ -1,18 +1,15 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
+<!-- served from route in server.js -->
 
-<!-- You might want to try something fancier: -->
-<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
-<!-- pug: https://pugjs.org/ -->
-<!-- haml: http://haml.info/ -->
-<!-- hbs(handlebars): http://handlebarsjs.com/ -->
 
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to Glitch!</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <title>meta-file | A File Metadata Microservice</title>
+    <meta name="description" content="A File Metadata Microservice">
+    <link id="favicon" 
+          rel="icon" 
+          href="https://cdn.glitch.com/6b4449ab-3e37-4356-8957-6a37c836afe2%2Ffavicon.ico?1502071047338" 
+          type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,33 +18,43 @@
   <body>
     <header>
       <h1>
-        A Dream of the Future
+        meta-file | A File Metadata Microservice
       </h1>
     </header>
 
     <main>
-      <p class="bold">Oh hi,</p>
-      <p>Tell me your hopes and dreams:</p>
-      <form>
-        <input type="text" maxlength="100" placeholder="Dreams!">
-        <button type="submit">Submit</button>
+      <h3>
+        Get your file metadata in json
+      </h3>
+      <section class="sub-section">
+        <p>
+          Post a file in a FormData object to API endpoint 
+          <span class="short-code">https://meta-file.glitch.me/filedata</span>
+          for a json response containing the file metadata.
+        </p>  
+        <p class="bold">Test Harness</p>
+        <p>
+          This test harness form can be used to post files to the API 
+          endpoint and view a sample json response without buffer data.
+        </p>
+      </section>
+      
+      <form id="file-analyze-form" enctype="multipart/form-data">
+        <input id="file-input" type="file" name="userFile">
+        <button type="submit" name="submit">Upload File</button>
       </form>
-      <section class="dreams">
-        <ul id="dreams">
-        </ul>
+      <section id="output-container">
+        <!-- Test harness output injected here -->
       </section>
     </main>
 
     <footer>
-      <a href="https://glitch.com">
-        Remix this in Glitch
+      <a href="https://github.com/IMBurbank/meta-file">
+        Github Repo
       </a>
     </footer>
 
-    <!-- Your web-app is https, so your scripts need to be too -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
+    <!-- Scripts -->
     <script src="/client.js"></script>
 
   </body>

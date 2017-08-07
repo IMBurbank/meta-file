@@ -1,8 +1,5 @@
 /* styles */
-/* called by your view template */
 
-/* You might want to try something fancier: */
-/* less: http://lesscss.org/ */
 
 * {
   box-sizing: border-box;
@@ -13,26 +10,24 @@ body {
   margin: 25px;
 }
 
-h1 {
+h1, h3, .bold {
   font-weight: bold;
-  color: pink;
-}
-
-.bold {
-  font-weight: bold;
+  color: #0caf50;
 }
 
 p {
   max-width: 600px;
+  margin: 0 0 .25em 1em;
 }
 
 form {
   margin-bottom: 25px;
   padding: 15px;
-  background-color: cyan;
+  background-color: #fffcf4;
   display: inline-block;
   width: 100%;
   max-width: 340px;
+  min-width: 200px;
   border-radius: 3px;
 }
 
@@ -43,28 +38,26 @@ input {
   width: 100%;
   border: 1px solid lightgrey;
   border-radius: 3px;
-  font-size: 16px;
+  font-size: .9rem;
 }
 
 button {
+  margin: 5px 2px 2px 0;
   font-size: 16px;
   border-radius: 3px;
   background-color: lightgrey;
   border: 1px solid grey;
-  box-shadow: 2px 2px teal;
+  box-shadow: 2px 2px #4f493c;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: yellow;
+  background-color: #7ee5b5;
 }
 
 button:active {
+  margin: 7px 0 0 2px;
   box-shadow: none;
-}
-
-li {
-  margin-bottom: 5px;
 }
 
 footer {
@@ -77,6 +70,16 @@ footer > a {
   color: #BBBBBB;
 }
 
-.nicejob {
-  text-decoration: line-through;
+.sub-section {
+  margin-left: .5rem;
+}
+
+.bold {
+  margin: .5em 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.short-code{
+  background: #eff7f9;
 }

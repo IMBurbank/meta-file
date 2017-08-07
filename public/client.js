@@ -1,26 +1,21 @@
 // client-side js
-// run by the browser each time your view template is loaded
 
-// by default, you've got jQuery,
-// add other scripts at the bottom of index.html
+var output = document.getElementById('output-container');
 
-$(function() {
-  console.log('hello world :o');
+
+document.getElementById('file-analyze-form').onsubmit = function(event) {
+  event.preventDefault();
   
-  $.get('/dreams', function(dreams) {
-    dreams.forEach(function(dream) {
-      $('<li></li>').text(dream).appendTo('ul#dreams');
-    });
-  });
+  if (event.target['file-input'].value) {
+    var userFile = new FormData(document.getElementById('file-analyze-form'));
 
-  $('form').submit(function(event) {
-    event.preventDefault();
-    var dream = $('input').val();
-    $.post('/dreams?' + $.param({dream: dream}), function() {
-      $('<li></li>').text(dream).appendTo('ul#dreams');
-      $('input').val('');
-      $('input').focus();
+    fetch('/filedata', { method: 'POST', body: userFile }).then( function(response) {
+      return response.json();
+    }).then( function(fileData) {
+      if (fileData.hasOwnProperty('buffer')) {
+        fileData.buffer = { object: 'buffer data ommited from harness' };
+      }
+      output.innerHTML = '<pre id="output">' + JSON.stringify(fileData, null, '  ') + '</pre>';
     });
-  });
-
-});
+  }
+}
