@@ -1,27 +1,20 @@
-Welcome to the Glitch BETA
+meta-file | A File Metadata Microservice
 =========================
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+### Get your file metadata in json
 
-**Glitch** is the friendly commmunity where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+Post a file in a FormData object to API endpoint `https://meta-file.glitch.me/filedata` for a json response containing the file metadata.
 
-Find out more [about Glitch](https://glitch.com/about).
+**Test Harness**
 
+The [API homepage](https://meta-file.glitch.me/) has a test harness form which can be used to post files and view a sample json response without buffer data.
 
-Your Project
-------------
+**API Homepage**
 
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
+* [https://meta-file.glitch.me/](https://meta-file.glitch.me/)
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+-------------------------
 
 
-Made by [Fog Creek](https://fogcreek.com/)
+Made by [IMBurbank](https://fogcreek.com/)
 -------------------
-
-\ ゜o゜)ノ
